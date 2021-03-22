@@ -1,0 +1,16 @@
+.right,.left{
+    width: 50%;
+   
+
+}
+.right{
+    float: right;
+}
+.left{
+    float: left;
+}
+.userN{
+    background-color: bisque;
+    border:1px solid red
+
+}
