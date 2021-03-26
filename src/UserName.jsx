@@ -11,8 +11,8 @@ export default class UserName extends React.Component{
         return <UserContext.Consumer>
         {
             (value)=>{ 
-                return <h1 className="userN" onClick={()=> { value.onClick(this.props.user) } }>
-                        {this.props.user.name}
+                return <h1>
+                        {this.props.name}
                     </h1>
             }
         }

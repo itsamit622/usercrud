@@ -6,34 +6,38 @@ import {UserContext} from './UserContext'
 
 export default class UserDetails extends React.Component {
     
-    render() {
-        console.log(UserContext.value)
-        let data = null;
-        if (this.props.select !== undefined && this.props.user[this.props.select]) {
-            if (this.props.select === "name") {
-                data = <UserName user={this.props.user} />
-            } else {
-                data = <h1> {this.props.user[this.props.select]} </h1>
-            }
 
-        } else { data= <UserContext.Consumer>{
-                 (value)=>{ 
-                return <div>
-                         <UserName user={value.userD} />
-                         <h1>{value.userD.username}</h1>
-                          <h1>{value.userD.phone}</h1>
-                          <h1>{value.userD.email}</h1>
-                          
-
-                    </div>
+    ClickMe(value){
+        {
+            if(this.props.user !==undefined){
+                value.onClick(this.props.user)
             }
         }
-            </UserContext.Consumer>
+    }
+    render(){
+    let Data =null;
+        return <UserContext.Consumer>
+
+            {
+            (value)=>{ 
+                if(this.props.select != undefined){
+                    Data = <UserName name={this.props.user[this.props.select]} />
+                }
+                else {
+                    Data= <>
+                                <UserName name={value.userD.name} />
+                                <h2>{value.userD.email}</h2>
+                                <h2>{value.userD.address.city}</h2>
+                    </>
+                }
+                return <div className="userN" style={{ border: this.props.border }} onClick={this.ClickMe.bind(this,value)}>
+                {Data}
+                
+            </div>
+
+            }
         }
-        console.log(data)
-        return <div >
-            {data}
-        </div>
+        </UserContext.Consumer>
     }
 }
 
