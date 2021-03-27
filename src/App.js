@@ -30,16 +30,31 @@ class App extends React.Component {
   render() {
     console.log(this.state.users);
     console.log("USERCONTEXT",UserContext)
-    return <UserContext.Provider value={{onClick:this.ClickYou ,userD: this.state.user1}} > <div>
-        <div className="left">
+    return <UserContext.Provider value={{onClick:this.ClickYou ,userD: this.state.user1}} > <div className="classn">
+
+<div class="jumbotron container">
+  <h1 class="display-4">Hello, React</h1>
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  
+  <button type="button" class="btn btn-outline-primary">Primary </button>
+        <button type="button" class="btn btn-success"> Success</button>
+
+ </div>
+     
+      
+       <div className="container">
+       <div className="row">
+        <div className="col">
           <UsersList
             users={this.state.users}
             
           />
         </div>
-        <div className="right">
+        <div className="col">
           <UsersDetails  />
         </div>
+      </div>
+      </div>
       </div>
       </UserContext.Provider>
     

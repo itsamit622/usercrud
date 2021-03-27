@@ -8,14 +8,10 @@ export default class UserName extends React.Component{
     render(){
         console.log(this.props.user)
 
-        return <UserContext.Consumer>
-        {
-            (value)=>{ 
-                return <h1>
+        
+                return <h1 className="list-group-item list-group-item-action list-group-item-info">
                         {this.props.name}
                     </h1>
-            }
-        }
-    </UserContext.Consumer> 
+        
     }
 }

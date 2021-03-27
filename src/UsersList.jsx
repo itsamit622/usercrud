@@ -13,7 +13,7 @@ getUserList(){
     let userlist=this.props.users.map((values)=>{
         //let usertag = value.name
 
-        return <UserDetails   key={values.id}  select={"name"} user={values}/>
+        return <div  class="list-group"> <UserDetails   key={values.id}  select={"name"} user={values}/> </div>
 
     })
     return userlist;
